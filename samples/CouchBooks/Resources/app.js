@@ -1,3 +1,4 @@
+/*jslint nomen: true, sloppy : true, plusplus: true, vars: true*/
 var NavigationController = require('lib/NavigationController').NavigationController,
     StateMachine = require('lib/state-machine').StateMachine,
     CouchClient = require('lib/couch_client').CouchClient,
@@ -75,10 +76,10 @@ var fsm = StateMachine.create({
       else {
         var contents = f.read();
         // Android MIME type is application/octet-stream, so skip check on that platform
-        if (Ti.Platform.osname !== 'android' && contents.mimeType !== 'text/json' && contents.mimeType !== 'application/json') {
-          self.show_error('Error reading seed data: wrong content type '+contents.mimeType);
-          return;
-        }
+        //if (Ti.Platform.osname !== 'android' && contents.mimeType !== 'text/json' && contents.mimeType !== 'application/json') {
+        //  self.show_error('Error reading seed data: wrong content type '+contents.mimeType);
+        //  return;
+        //}
         
         var docs;
         try {
